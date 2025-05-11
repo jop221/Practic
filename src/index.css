@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --background-color: hsl(0, 0%, 98%);
+  --background-image: url(/images/bg-desktop-light.jpg);
+  --background-mobile-image: url(/images/bg-mobile-light.jpg);
+  --list-background: white;
+  --todo-text-color:hsl(235, 19%, 35%);
+  --button-text-color: hsl(236, 9%, 61%);
+  --button-hover-color:hsl(235, 19%, 35%);
+  --checkbox-border-color: hsl(233, 11%, 84%);
+  --border-color:hsl(236, 33%, 92%);
+  --main-box-shadow:0 2px 1px rgba(210, 211, 219, 0.02),
+    0 6px 5px rgba(210, 211, 219, 0.03),
+    0 12px 8px rgba(210, 211, 219, 0.06),
+    0 20px 12px rgba(210, 211, 219, 0.09),
+    0 28px 18px rgba(210, 211, 219, 0.15),
+    0 40px 20px rgba(210, 211, 219, 0.35) 
+  ;
+  --sub-box-shadow:0 2px 1px rgba(210, 211, 219, 0.02),
+    0 3px 5px rgba(210, 211, 219, 0.03),
+    0 4px 8px rgba(210, 211, 219, 0.06),
+    0 6px 12px rgba(210, 211, 219, 0.09),
+    0 8px 18px rgba(210, 211, 219, 0.15),
+    0 10px 20px rgba(210, 211, 219, 0.35) 
+  ;
+}
+
+[data-theme='dark']{
+  --background-color: hsl(235, 21%, 11%);
+  --background-image: url(/images/bg-desktop-dark.jpg);
+  --background-mobile-image: url(/images/bg-mobile-dark.jpg);
+  --list-background: hsl(235, 24%, 19%);
+  --todo-text-color:hsl(234, 39%, 85%);
+  --button-text-color: hsl(234, 11%, 52%);
+  --button-hover-color:hsl(236, 33%, 92%);
+  --checkbox-border-color: hsl(233, 14%, 35%);
+  --border-color:hsl(237, 14%, 26%);
+  --main-box-shadow: none;
+  --sub-box-shadow: none;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  background-image: var(--background-image);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-size: 18px;
+  font-family: 'Josefin Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  cursor: pointer;
+}
+
+
+
+/* 
+dark
+- Very Dark Blue: hsl(235, 21%, 11%)
+- Very Dark Desaturated Blue: hsl(235, 24%, 19%)
+- Light Grayish Blue: hsl(234, 39%, 85%)
+- Light Grayish Blue (hover): hsl(236, 33%, 92%)
+- Dark Grayish Blue: hsl(234, 11%, 52%)
+- Very Dark Grayish Blue: hsl(233, 14%, 35%)
+- Very Dark Grayish Blue: hsl(237, 14%, 26%)
+
+light
+- Very Light Gray: hsl(0, 0%, 98%)
+- Very Light Grayish Blue: hsl(236, 33%, 92%)
+- Light Grayish Blue: hsl(233, 11%, 84%)
+- Dark Grayish Blue: hsl(236, 9%, 61%)
+- Very Dark Grayish Blue: hsl(235, 19%, 35%) */

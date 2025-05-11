@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+databases
+asyncpg
+pydantic
+python-jose
+PyJWT

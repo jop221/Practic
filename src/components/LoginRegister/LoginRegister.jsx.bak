@@ -1,0 +1,66 @@
+import { useState } from 'react';
+import { login, register } from '../../api/auth';
+import './loginRegister.scoped.css';
+
+export default function LoginRegister({ onLoginSuccess }) {
+  const [isRegister, setIsRegister] = useState(false);
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState(null);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError(null);
+    try {
+      if (isRegister) {
+        const data = await register(username, password);
+        onLoginSuccess(data);
+      } else {
+        const data = await login(username, password);
+        onLoginSuccess(data);
+      }
+    } catch (err) {
+      setError(err.message || 'Authentication failed');
+    }
+  };
+
+  return (
+    <div className="login-register-container">
+      <h2>{isRegister ? 'Register' : 'Login'}</h2>
+      <form onSubmit={handleSubmit} className="login-register-form">
+        <label>
+          Username
+          <input
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+            autoComplete="username"
+          />
+        </label>
+        <label>
+          Password
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            autoComplete={isRegister ? 'new-password' : 'current-password'}
+          />
+        </label>
+        {error && <p className="error-message">{error}</p>}
+        <button type="submit">{isRegister ? 'Register' : 'Login'}</button>
+      </form>
+      <p className="toggle-text">
+        {isRegister ? 'Already have an account?' : "Don't have an account?"}{' '}
+        <button
+          type="button"
+          className="toggle-button"
+          onClick={() => setIsRegister(!isRegister)}
+        >
+          {isRegister ? 'Login' : 'Register'}
+        </button>
+      </p>
+    </div>
+  );
+}

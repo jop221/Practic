@@ -1,0 +1,12 @@
+.filter-button {
+  font-weight: 700;
+  padding: 0 0.5rem;
+}
+
+.filter-button[aria-pressed=true] {
+  color: hsl(220, 98%, 61%)
+}
+
+.filter-button:hover {
+  color: var(--button-hover-color) !important;
+}
